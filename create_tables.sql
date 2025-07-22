@@ -1,5 +1,5 @@
 CREATE TABLE alumni (
-    alumniID        INT         NOT NULL,
+    alumniID        INT NOT NULL AUTO_INCREMENT,
     fName           VARCHAR(20) NOT NULL,
     lName           VARCHAR(20) NOT NULL,
     email           VARCHAR(50),
@@ -20,5 +20,6 @@ CREATE TABLE alumni (
     deceasedYN      VARCHAR(1),
     deceasedDT      DATE,
     deceasedNotes   VARCHAR(500),
-    CONSTRAINT PK_alumniID PRIMARY KEY CLUSTERED (alumniID)
+    PRIMARY KEY (alumniID)
 );
+
