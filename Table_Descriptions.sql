@@ -1,6 +1,5 @@
-
 CREATE TABLE address (
-    addressID INTEGER PRIMARY KEY NOT NULL,
+    addressID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     alumniID INTEGER NOT NULL,
     address VARCHAR(50),
     city VARCHAR(50),
@@ -11,9 +10,8 @@ CREATE TABLE address (
     FOREIGN KEY (alumniID) REFERENCES alumni(alumniID)
 );
 
--- EMPLOYMENT TABLE
 CREATE TABLE employment (
-    EID INTEGER PRIMARY KEY NOT NULL,
+    EID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     alumniID INTEGER NOT NULL,
     company VARCHAR(50) NOT NULL,
     city VARCHAR(50),
@@ -27,9 +25,8 @@ CREATE TABLE employment (
     FOREIGN KEY (alumniID) REFERENCES alumni(alumniID)
 );
 
--- DEGREE TABLE
 CREATE TABLE degree (
-    degreeID INTEGER PRIMARY KEY NOT NULL,
+    degreeID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     alumniID INTEGER NOT NULL,
     major VARCHAR(50) NOT NULL,
     minor VARCHAR(50),
@@ -40,9 +37,8 @@ CREATE TABLE degree (
     FOREIGN KEY (alumniID) REFERENCES alumni(alumniID)
 );
 
--- SKILLSET TABLE
 CREATE TABLE skillset (
-    SID INTEGER PRIMARY KEY NOT NULL,
+    SID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     alumniID INTEGER NOT NULL,
     skill VARCHAR(50) NOT NULL,
     proficiency VARCHAR(10),
@@ -50,9 +46,8 @@ CREATE TABLE skillset (
     FOREIGN KEY (alumniID) REFERENCES alumni(alumniID)
 );
 
--- DONATIONS TABLE
 CREATE TABLE donations (
-    donationID INTEGER PRIMARY KEY NOT NULL,
+    donationID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     alumniID INTEGER NOT NULL,
     donationAmt DECIMAL(11,2) NOT NULL,
     donationDT DATE NOT NULL,
@@ -60,6 +55,7 @@ CREATE TABLE donations (
     description VARCHAR(200),
     FOREIGN KEY (alumniID) REFERENCES alumni(alumniID)
 );
+
 
 
 
